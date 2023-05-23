@@ -2,9 +2,12 @@ import "./App.css";
 import Form from "./components/Form";
 import { useState } from "react";
 import List from "./components/List";
+import useLocalStorageState from "use-local-storage-state";
 
 function App() {
-  const [activities, setActivities] = useState([]);
+  const [activities, setActivities] = useLocalStorageState("activities", { defaultValue: null });
+  // const [activities, setActivities] = useState([]);
+
 
   function handleAddActivity(activity) {
     setActivities([...activities, activity]);
