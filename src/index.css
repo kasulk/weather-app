@@ -13,10 +13,10 @@ code {
 } */
 
 :root {
-  --primary-color: #be3144;
-  --secondary-color: #3a3d40;
-  --tertiary-color: #45567d;
-  --main-white: #f0f0f0;
+  --color1: #be3144;
+  --color2: #3a3d40;
+  --color3: #45567d;
+  --color4: #f0f0f0;
 }
 
 body {
