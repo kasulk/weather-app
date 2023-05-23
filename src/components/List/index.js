@@ -23,7 +23,8 @@ export default function List({
             "
               onClick={() => onDeleteActivity(activity.id)}
             >
-              X
+              {/* X */}
+              <i class="fa-regular fa-trash-can main-content__listitem__icon"></i>
             </button>
           </li>
         );
