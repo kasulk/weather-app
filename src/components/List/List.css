@@ -1,16 +1,17 @@
 
-
 .main-content__list-container {
   list-style: none;
+  padding: 1rem;
+  margin: 1rem;
 }
-
-
 
 .main-content__listitem {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
-  background-color: var(--color1);
+  background-color: var(--color4);
+  color: var(--color-black);
   margin: 1rem;
   padding: 1rem;
   font-weight: bold;
@@ -18,21 +19,14 @@
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .main-content__listitem:hover {
-  /* box-shadow: 2px 2px 2px; */
-  box-shadow: rgba(0, 0, 0, 1);
-  opacity: 0.8;
-  
-}
-
-.main-content__listitem__button {
-  border: none;
-
-  height: 1rem;
-  width: 1rem;
-  padding: 0;
-  margin: 0;
+  box-shadow: none;
+  color: var(--color-black);
+  filter: brightness(95%);
+  /* padding: 0;
+  margin: 0; */
 }
 
 .main-content__listitem__icon:hover {
-  color: var(--color1);
+  color: red;
+  cursor: pointer;
 }

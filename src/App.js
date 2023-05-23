@@ -76,7 +76,7 @@ export default App;
 const dummyData = [
   {
     id: 0,
-    name: "Kiss girlfried",
+    name: "Kiss girlfried ❤️",
     isForGoodWeather: true,
   },
 ];
