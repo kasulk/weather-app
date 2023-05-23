@@ -1,20 +1,26 @@
 import { useState } from "react";
 import useFetch from "../../utils/useFetch";
+import { uid } from "uid";
+
 
 export default function Form({ onAddActivity }) {
   const [searchTerm, setSearchTerm] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
-    const form = event.target;
     const name = event.target.activity.value;
     // console.log("form:", form);
     const isForGoodWeather = event.target.isGood.checked;
-    // console.log("isForGoodWeather:", isForGoodWeather);
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
-    console.log("data:", data);
-    const dataBla = {};
+    // console.log("isForGoodWeather:", isForGoodWeather)
+    const data = {
+      id: uid(),
+      name,
+      isForGoodWeather
+    }
+    onAddActivity(data);
+    event.target.reset();
+    event.target.activity.focus();
+    /* console.log(data); */
   }
 
   function Weather() {
@@ -35,8 +41,8 @@ export default function Form({ onAddActivity }) {
           type="text"
           name="activity"
           id="activity"
-          value={searchTerm}
-          onChange={(event) => setSearchTerm(event.target.value)}
+        /*           value={searchTerm}
+                  onChange={(event) => setSearchTerm(event.target.value)} */
         />
         <label htmlFor="is-good">Good-weather activity </label>
         <input type="checkbox" name="isGood" id="is-good" />
