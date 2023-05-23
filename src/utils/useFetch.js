@@ -9,10 +9,9 @@ export default function useFetch(url) {
       const newData = await response.json();
 
       setData(newData);
-      //   console.log("data:", data);
     }
     startFetching();
-  }, [url]);
+  }, []);
 
   return data;
 }

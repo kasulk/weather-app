@@ -1,5 +1,4 @@
 import { useState } from "react";
-import useFetch from "../../utils/useFetch";
 import { uid } from "uid";
 
 
@@ -24,13 +23,10 @@ export default function Form({ onAddActivity }) {
   }
 
   function Weather() {
-    const weather = JSON.stringify(
-      useFetch("https://example-apis.vercel.app/api/weather/")
-    );
+
 
     // console.log("Weather:", weather);
   }
-  Weather();
 
   return (
     <>
