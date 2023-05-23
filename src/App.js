@@ -1,6 +1,5 @@
 import "./App.css";
 import Form from "./components/Form";
-import { useState } from "react";
 import List from "./components/List";
 import useLocalStorageState from "use-local-storage-state";
 
@@ -22,6 +21,9 @@ function App() {
     (activity) => activity.isForGoodWeather === isGoodWeather
   );
   // );
+  function handleDeleteActivity(id) {
+    setActivities(activities.filter(activity => activity.id !== id));
+  }
 
   return (
     <div className="App">
@@ -30,6 +32,7 @@ function App() {
           activities={activities}
           filteredActivities={filteredActivities}
           isGoodWeather={isGoodWeather}
+          onDeleteActivity={handleDeleteActivity}
         />
       </ul>
       <Form onAddActivity={(activity) => handleAddActivity(activity)} />
