@@ -38,8 +38,8 @@ function App() {
   return (
     <div className="App">
       <header>
-        <span>{newWeather.condition}</span>
-        <span>{newWeather.temperature}ºC</span>
+        <span>{newWeather.condition || "loading..."}</span>
+        <span>{newWeather.temperature || "loading"}ºC</span>
       </header>
       <ul>
         <List
