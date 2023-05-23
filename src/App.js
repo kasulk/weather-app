@@ -45,7 +45,7 @@ function App() {
         </span>
       </header>
       <main className="main-content">
-        <section>
+        <section className="main-content__form">
           <Form onAddActivity={(activity) => handleAddActivity(activity)} />
         </section>
         <section className="main-content__activities">
