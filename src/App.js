@@ -45,6 +45,9 @@ function App() {
         </span>
       </header>
       <main className="main-content">
+        <section>
+          <Form onAddActivity={(activity) => handleAddActivity(activity)} />
+        </section>
         <section className="main-content__activities">
           <ul className="main-content__list-container">
             <List
@@ -54,9 +57,6 @@ function App() {
               onDeleteActivity={handleDeleteActivity}
             />
           </ul>
-        </section>
-        <section>
-          <Form onAddActivity={(activity) => handleAddActivity(activity)} />
         </section>
       </main>
       <footer className="footer">
