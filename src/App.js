@@ -2,15 +2,25 @@ import "./App.css";
 import Form from "./components/Form";
 import List from "./components/List";
 import useLocalStorageState from "use-local-storage-state";
+import useFetch from "./utils/useFetch";
+import { useState } from "react";
+
 
 function App() {
+
   const [activities, setActivities] = useLocalStorageState("activities", {
     defaultValue: dummyData,
   });
-  // const [filteredActivities, setFilteredActivities] = useState([]);
+
+
+  const newWeather = { ...useFetch("https://example-apis.vercel.app/api/weather") }
+
+  console.log("APPsays: ", newWeather)
+
   let filteredActivities = [];
-  const isGoodWeather = true;
-  // const [activities, setActivities] = useState([]);
+  const isGoodWeather = newWeather.isGoodWeather;
+  console.log(isGoodWeather)
+
 
   function handleAddActivity(activity) {
     setActivities([...activities, activity]);
@@ -27,6 +37,10 @@ function App() {
 
   return (
     <div className="App">
+      <header>
+        <span>{newWeather.condition || "loading..."}</span>
+        <span>{newWeather.temperature || "loading"}ºC</span>
+      </header>
       <ul>
         <List
           activities={activities}
