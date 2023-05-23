@@ -1,3 +1,32 @@
+
+.main-content__list-container {
+  list-style: none;
+  padding: 1rem;
+  margin: 1rem;
+}
+
 .main-content__listitem {
-  background-color: red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: var(--color4);
+  color: var(--color-black);
+  margin: 1rem;
+  padding: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.main-content__listitem:hover {
+  box-shadow: none;
+  color: var(--color-black);
+  filter: brightness(95%);
+  /* padding: 0;
+  margin: 0; */
+}
+
+.main-content__listitem__icon:hover {
+  color: red;
+  cursor: pointer;
 }

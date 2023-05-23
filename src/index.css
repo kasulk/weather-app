@@ -1,4 +1,7 @@
 * {
+  box-sizing: border-box;
+
+  /* ! outline for production only */
   outline: 1px dashed red;
 }
 
@@ -7,9 +10,12 @@
   --color2: #3a3d40;
   --color3: #45567d;
   --color4: #f0f0f0;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
 }
 
 body {
-  padding-top: 11rem;
-  /* background-color: var(--primary-color); */
+  padding: 10rem 0;
+  line-height: 1.5rem;
 }

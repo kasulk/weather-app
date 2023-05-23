@@ -18,13 +18,16 @@ export default function List({
         return (
           <li className="main-content__listitem" key={activity.id}>
             {activity.name}
-            <button
+            {/* <button
               className="main-content__listitem__button
             "
               onClick={() => onDeleteActivity(activity.id)}
-            >
-              X
-            </button>
+            > */}
+              {/* X */}
+              <i className="main-content__listitem__icon fa-regular fa-trash-can"
+              onClick={() => onDeleteActivity(activity.id)}
+              ></i>
+            {/* </button> */}
           </li>
         );
       })}
