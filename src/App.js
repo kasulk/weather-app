@@ -1,4 +1,5 @@
 import "./App.css";
+
 import Form from "./components/Form";
 import List from "./components/List";
 import useLocalStorageState from "use-local-storage-state";
@@ -35,19 +36,29 @@ function App() {
 
   return (
     <div className="App">
-      <header>
-        <span>{newWeather.condition || "loading..."}</span>
-        <span>{newWeather.temperature || "loading"}ºC</span>
+      <header className="header">
+        <span className="header__icon">
+          {newWeather.condition || "loading..."}
+        </span>
+        <span className="header__temperature">
+          {newWeather.temperature || "loading"}ºC
+        </span>
       </header>
-      <ul>
-        <List
-          activities={activities}
-          filteredActivities={filteredActivities}
-          isGoodWeather={isGoodWeather}
-          onDeleteActivity={handleDeleteActivity}
-        />
-      </ul>
-      <Form onAddActivity={(activity) => handleAddActivity(activity)} />
+      <main className="main-content">
+        <section className="main-content__activities">
+          <ul className="main-content__list-container">
+            <List
+              activities={activities}
+              filteredActivities={filteredActivities}
+              isGoodWeather={isGoodWeather}
+              onDeleteActivity={handleDeleteActivity}
+            />
+          </ul>
+        </section>
+        <section>
+          <Form onAddActivity={(activity) => handleAddActivity(activity)} />
+        </section>
+      </main>
       <footer className="footer">
         <p className="footer__text">Made with 🌶️ in Kreuzberg.</p>
         <p className="footer__text">

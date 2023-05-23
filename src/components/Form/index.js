@@ -1,6 +1,6 @@
+import "./Form.css";
 import { useState } from "react";
 import { uid } from "uid";
-
 
 export default function Form({ onAddActivity }) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,8 +14,8 @@ export default function Form({ onAddActivity }) {
     const data = {
       id: uid(),
       name,
-      isForGoodWeather
-    }
+      isForGoodWeather,
+    };
     onAddActivity(data);
     event.target.reset();
     event.target.activity.focus();
@@ -23,26 +23,36 @@ export default function Form({ onAddActivity }) {
   }
 
   function Weather() {
-
-
     // console.log("Weather:", weather);
   }
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <h1>Add new activity:</h1>
-        <label htmlFor="activity">Name: </label>
+      <form className="main-content__form" onSubmit={handleSubmit}>
+        <h1 className="main-content__form__header">Add new activity:</h1>
+        <label className="main-content__form__label" htmlFor="activity">
+          Name:{" "}
+        </label>
         <input
+          className="main-content__form__input"
           type="text"
           name="activity"
           id="activity"
-        /*           value={searchTerm}
+          /*           value={searchTerm}
                   onChange={(event) => setSearchTerm(event.target.value)} */
         />
-        <label htmlFor="is-good">Good-weather activity </label>
-        <input type="checkbox" name="isGood" id="is-good" />
-        <button type="submit">Submit</button>
+        <label className="main-content__form__label" htmlFor="is-good">
+          Good-weather activity{" "}
+        </label>
+        <input
+          className="main-content__form__checkbox"
+          type="checkbox"
+          name="isGood"
+          id="is-good"
+        />
+        <button className="main-content__form__button" type="submit">
+          Submit
+        </button>
       </form>
     </>
   );
