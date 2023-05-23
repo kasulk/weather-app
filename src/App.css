@@ -1,4 +1,25 @@
+/* Daniel */
 .App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* width: 300px; */
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: fixed;
+  bottom: 0;
+
+  background-color: blueviolet;
+  width: 100%;
+  color: white;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +56,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
