@@ -1,8 +1,8 @@
-import "./Background.css";
+import "./BadWeather.css";
 
-export default function Background() {
+export default function Background(goodWeather) {
     return (
-        <ul className="circles">
+        <ul className="rain">
             <li>💧</li>
             <li>💧</li>
             <li>💧</li>
@@ -16,3 +16,6 @@ export default function Background() {
         </ul>
     )
 }
+
+
+

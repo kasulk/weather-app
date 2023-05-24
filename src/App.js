@@ -1,6 +1,6 @@
 import "./App.css";
-
-import Background from "./utils/background-animations/Background";
+import GoodWeather from "./utils/background-animations/GoodWeather";
+import BadWeather from "./utils/background-animations//BadWeather";
 import Form from "./components/Form";
 import List from "./components/List";
 import useLocalStorageState from "use-local-storage-state";
@@ -36,7 +36,8 @@ function App() {
 
   return (
     <div className="App">
-      <Background />
+      {isGoodWeather && <GoodWeather />}
+      {!isGoodWeather && <BadWeather />}
       <header className="header">
         <span className="header__icon">
           {newWeather.condition || "loading..."}

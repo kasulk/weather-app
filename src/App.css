@@ -61,7 +61,7 @@ font-size: 5rem;
 }
 
 .footer__text {
-/*   margin: 0.7rem; */
+  margin: 0.7rem;
   font-size: .7rem;
   filter: brightness(95%);
 }
