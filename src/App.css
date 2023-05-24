@@ -5,28 +5,29 @@
   align-items: center;
 }
 .header {
-display: flex;
-align-items: center;
-justify-content: space-evenly;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 
-position: fixed;
-top: 0;
+  position: fixed;
+  top: 0;
 
-background-color: var(--color1);
-box-shadow: 0 2px rgba(0,0,0,0.5);
+  background-color: var(--color1);
+  box-shadow: 0 2px rgba(0, 0, 0, 0.5);
 
-padding: 1rem;
-margin-top: 0;
-width: 100%;
-height: 10rem;
+  padding: 1rem;
+  margin-top: 0;
+  width: 100%;
+  height: 10rem;
+  color: white;
 }
 
 .header__icon {
-font-size: 5rem;
+  font-size: 5rem;
 }
 
 .header__temperature {
-font-size: 5rem;
+  font-size: 5rem;
 }
 
 .main-content {
@@ -45,66 +46,24 @@ font-size: 5rem;
 .footer {
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
 
   position: fixed;
   bottom: 0;
   height: 5rem;
-  line-height: .1rem;
+  /* line-height: 0.1rem; */
+  line-height: 1rem;
   background-color: var(--color2);
   width: 100%;
   color: var(--color-white);
   text-align: center;
-/*   box-shadow: 0 -4px rgba(0,0,0,0.5); */
+  /*   box-shadow: 0 -4px rgba(0,0,0,0.5); */
   opacity: 0.9;
 }
 
 .footer__text {
-  margin: 0.7rem;
-  font-size: .7rem;
+  /* margin: 0.7rem; */
+  font-size: 0.7rem;
   filter: brightness(95%);
 }
-
-
-
-/* ********** from create react app ************* */
-
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */

@@ -1,12 +1,14 @@
 * {
   box-sizing: border-box;
-  font-family:'Trebuchet MS', sans-serif
+  font-family: "Trebuchet MS", sans-serif;
   /* ! outline for production only */
-/*   outline: 1px dashed red; */
+  /* outline: 1px dashed red; */
 }
 
 :root {
-  --color1: #be3144;
+  /* --color1: #be3144; */
+  /* --color1: #2a75a1; */
+  --color1: #2e86b9;
   --color2: #3a3d40;
   --color3: #45567d;
   --color4: #f0f0f0;
