@@ -15,7 +15,7 @@ export default function Form({ onAddActivity }) {
       isForGoodWeather,
     };
     if (data.name === "") {
-      alert("Please, type an activity")
+      alert("Please, type an activity before clicking on 'submit'")
       event.target.activity.focus();
       return
     } else {
