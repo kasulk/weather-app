@@ -6,7 +6,6 @@ import List from "./components/List";
 import useLocalStorageState from "use-local-storage-state";
 import useFetch from "./utils/useFetch";
 
-
 function App() {
   const [activities, setActivities] = useLocalStorageState("activities", {
     defaultValue: dummyData,
@@ -20,6 +19,7 @@ function App() {
 
   let filteredActivities = [];
   const isGoodWeather = newWeather.isGoodWeather;
+  // const isGoodWeather = false;
 
   function handleAddActivity(activity) {
     setActivities([...activities, activity]);
@@ -62,12 +62,17 @@ function App() {
         </section>
       </main>
       <footer className="footer">
-        <p className="footer__text">Made with 🌶️ in Kreuzberg.</p>
         <p className="footer__text">
+          Made with 🌶️ in Kreuzberg.
+          <br />
+          {/* </p> */}
+          {/* <p className="footer__text"> */}
           C&D Web Development Industries Incorporated GmbH & Co. KG
           International Bros.
+          <br />
+          {/* </p> */}
+          {/* <p className="footer__text">© */}️ {new Date().getFullYear()}
         </p>
-        <p className="footer__text">©️ {new Date().getFullYear()}</p>
       </footer>
     </div>
   );

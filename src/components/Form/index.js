@@ -2,7 +2,6 @@ import "./Form.css";
 import { uid } from "uid";
 
 export default function Form({ onAddActivity }) {
-
   function handleSubmit(event) {
     event.preventDefault();
     const name = event.target.activity.value;
@@ -14,15 +13,15 @@ export default function Form({ onAddActivity }) {
       name,
       isForGoodWeather,
     };
-    if (data.name === "") {
-      alert("Please, type an activity before clicking on 'submit'")
-      event.target.activity.focus();
-      return
-    } else {
-      onAddActivity(data);
-      event.target.reset();
-      event.target.activity.focus();
-    }
+    // if (data.name === "") {
+    //   alert("Please, type an activity before clicking on 'submit'")
+    //   event.target.activity.focus();
+    //   return
+    // } else {
+    onAddActivity(data);
+    event.target.reset();
+    event.target.activity.focus();
+    // }
   }
 
   return (
@@ -39,6 +38,7 @@ export default function Form({ onAddActivity }) {
             name="activity"
             id="activity"
             placeholder="Your activity!"
+            required
           />
         </div>
         <div className="form__input">
