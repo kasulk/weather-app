@@ -50,17 +50,19 @@ font-size: 5rem;
 
   position: fixed;
   bottom: 0;
-  height: 10rem;
+  height: 5rem;
+  line-height: .1rem;
   background-color: var(--color2);
   width: 100%;
   color: var(--color-white);
   text-align: center;
-  box-shadow: 0 -4px rgba(0,0,0,0.5);
+/*   box-shadow: 0 -4px rgba(0,0,0,0.5); */
   opacity: 0.9;
 }
 
 .footer__text {
-  margin: 0.7rem;
+/*   margin: 0.7rem; */
+  font-size: .7rem;
   filter: brightness(95%);
 }
 

@@ -4,7 +4,7 @@ import Form from "./components/Form";
 import List from "./components/List";
 import useLocalStorageState from "use-local-storage-state";
 import useFetch from "./utils/useFetch";
-import { useState } from "react";
+
 
 function App() {
   const [activities, setActivities] = useLocalStorageState("activities", {
@@ -19,7 +19,6 @@ function App() {
 
   let filteredActivities = [];
   const isGoodWeather = newWeather.isGoodWeather;
-  console.log(isGoodWeather);
 
   function handleAddActivity(activity) {
     setActivities([...activities, activity]);
@@ -29,7 +28,7 @@ function App() {
   filteredActivities = activities.filter(
     (activity) => activity.isForGoodWeather === isGoodWeather
   );
-  // );
+
   function handleDeleteActivity(id) {
     setActivities(activities.filter((activity) => activity.id !== id));
   }
