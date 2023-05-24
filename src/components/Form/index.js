@@ -14,9 +14,15 @@ export default function Form({ onAddActivity }) {
       name,
       isForGoodWeather,
     };
-    onAddActivity(data);
-    event.target.reset();
-    event.target.activity.focus();
+    if (data.name === "") {
+      alert("Please, type an activity")
+      event.target.activity.focus();
+      return
+    } else {
+      onAddActivity(data);
+      event.target.reset();
+      event.target.activity.focus();
+    }
   }
 
   return (
