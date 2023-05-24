@@ -1,56 +1,58 @@
 import "./Form.css";
-import { useState } from "react";
 import { uid } from "uid";
 
 export default function Form({ onAddActivity }) {
-  const [searchTerm, setSearchTerm] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
     const name = event.target.activity.value;
-    // console.log("form:", form);
+
     const isForGoodWeather = event.target.isGood.checked;
-    // console.log("isForGoodWeather:", isForGoodWeather)
+
     const data = {
       id: uid(),
       name,
       isForGoodWeather,
     };
-    onAddActivity(data);
-    event.target.reset();
-    event.target.activity.focus();
-    /* console.log(data); */
-  }
-
-  function Weather() {
-    // console.log("Weather:", weather);
+    if (data.name === "") {
+      alert("Please, type an activity before clicking on 'submit'")
+      event.target.activity.focus();
+      return
+    } else {
+      onAddActivity(data);
+      event.target.reset();
+      event.target.activity.focus();
+    }
   }
 
   return (
     <>
-      <form className="main-content__form" onSubmit={handleSubmit}>
-        <h1 className="main-content__form__header">Add new activity:</h1>
-        <label className="main-content__form__label" htmlFor="activity">
-          Name:{" "}
-        </label>
-        <input
-          className="main-content__form__input"
-          type="text"
-          name="activity"
-          id="activity"
-          /*           value={searchTerm}
-                  onChange={(event) => setSearchTerm(event.target.value)} */
-        />
-        <label className="main-content__form__label" htmlFor="is-good">
-          Good-weather activity{" "}
-        </label>
-        <input
-          className="main-content__form__checkbox"
-          type="checkbox"
-          name="isGood"
-          id="is-good"
-        />
-        <button className="main-content__form__button" type="submit">
+      <form className="form" onSubmit={handleSubmit}>
+        <h1 className="form__header">Add new activity:</h1>
+        <div className="form__input">
+          <label className="form__input--label" htmlFor="activity">
+            Name your activity:
+          </label>
+          <input
+            className="form__input--text"
+            type="text"
+            name="activity"
+            id="activity"
+            placeholder="Your activity!"
+          />
+        </div>
+        <div className="form__input">
+          <label className="form__input--label" htmlFor="is-good">
+            Is it a good-weather activity?
+          </label>
+          <input
+            className="form__input--checkbox"
+            type="checkbox"
+            name="isGood"
+            id="is-good"
+          />
+        </div>
+        <button className="form__button" type="submit">
           Submit
         </button>
       </form>

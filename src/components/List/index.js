@@ -1,7 +1,6 @@
 import "./List.css";
 
 export default function List({
-  activities,
   isGoodWeather,
   filteredActivities,
   onDeleteActivity,
@@ -9,9 +8,11 @@ export default function List({
   return (
     <>
       <h2 className="main-content__list-title">
-        {isGoodWeather
-          ? "The weather is awesome! GO outside and: "
-          : "Bad weather outside! Here's what you can do now: "}
+        {isGoodWeather === undefined
+          ? "loading..."
+          : isGoodWeather
+            ? "The weather is awesome! GO outside and: "
+            : "Bad weather outside! Here's what you can do now: "}
       </h2>
 
       {filteredActivities.map((activity) => {
@@ -23,10 +24,10 @@ export default function List({
             "
               onClick={() => onDeleteActivity(activity.id)}
             > */}
-              {/* X */}
-              <i className="main-content__listitem__icon fa-regular fa-trash-can"
+            {/* X */}
+            <i className="main-content__listitem__icon fa-regular fa-trash-can"
               onClick={() => onDeleteActivity(activity.id)}
-              ></i>
+            ></i>
             {/* </button> */}
           </li>
         );
